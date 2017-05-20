@@ -74,8 +74,8 @@
   }
   .msg {
     width: 90% !important;
-	text-align: left !important;
-	padding-left: 5px;
+  	text-align: left !important;
+  	padding-left: 5px;
   }
   .titulo {
 	width: 50%;
@@ -164,21 +164,64 @@ iframe {
   position: fixed;
   right: 0;
   top: 135px;
-  z-index: 15000;
+  z-index: 8500;
   width: 50%;
-  padding: 25px 10px;
+  height: 0px;
   color: #fff;
   font-family: tahoma, verdana;
   font-size: 18px;
   border-radius: 5px 0 0 5px;
-  text-align: right;
   opacity: 0;
+}
+.msg span {
+  float:left;
+  margin-top: 25px;
+  margin-left: 10px;
 }
 .bg-green {
   background-color: rgba(40, 200, 35, 0.9);
 }
 .bg-red {
   background-color: rgba(198, 0, 0, 0.9);
+}
+#modal {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background-color: rgba(40,40,40,0.6);
+  display: none;
+}
+.modal-content {
+  width: 500px;
+  min-height: 300px;
+  border-radius: 6px;
+  border: 1px solid #656565;
+  margin: 50px auto;
+  padding: 15px;
+  background-color: #fff;
+  box-shadow: 0px 2px 6px 3px #656565;
+}
+.modal-top {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #585850;
+  font-family: verdana, times, arial;
+  border-bottom: 2px solid #696969;
+  padding-bottom: 5px;
+}
+.modal-body {
+  margin-top: 10px;
+  height: 225px;
+  font-size: 12px;
+  font-family: verdana, times, arial;
+  border-bottom: 2px solid #696969;
+}
+.modal-bottom {
+  float: right;
+  margin-top: 10px;
 }
 
 /*font colors */

@@ -1,4 +1,5 @@
 function cadastrar() {
+  abrirModal();
   var dados = $("#form-cadastro").serialize();
   if(validaCampos()) {
     $.ajax({
@@ -7,6 +8,7 @@ function cadastrar() {
       url: '../php/Cadastrar.php',
       data: dados,
       success: function(msg) {
+        fecharModal();
         if(msg == "ok") {
           document.getElementById("form-cadastro").reset();
           showMessage(1, "Cadastro realizado com sucesso!");
@@ -24,6 +26,7 @@ function validaCampos() {
   var recurso = this.form_page.recurso.value;
 
   if(titulo == "" || desc == "" || recurso == "") {
+    fecharModal();
     showMessage(-1, "Preencha todos os campos obrigatórios!");
     return false;
   }
@@ -61,7 +64,6 @@ function desbloqueiaVideo(button) {
             showMessage(1, "Dados enviados com sucesso!");
             document.getElementById("interesse").reset();
             $('#interesse').css('display', 'none');
-			button.value = "Confirmar";
           } else if(ret == "cad"){
             showMessage(-1, "Email ou telefone já cadastrados, por favor insira um novo email ou telefone!");
           }
@@ -87,12 +89,14 @@ function validaCamposCadastro() {
 }
 
 function atualizarStatusPost(id_post) {
+  abrirModal();
   $.ajax({
     type: 'post',
     dataType: 'html',
     url: '../php/AtualizarStatus.php',
     data: {postid: id_post},
     success: function(ret) {
+      fecharModal();
       if(ret == "ok") {
         showMessage(1, "Post atualizado com sucesso!");
       } else {
